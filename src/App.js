@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { createContext } from 'react'
+import First from './components/First'
+let Name,Address;
+const App = () => {
+  Name=createContext();
+  Address=createContext();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <h1>App component is running</h1>
+    <Name.Provider value="programmers point">
+    <Address.Provider value="indore | ujjain">
+    <First/>
+    </Address.Provider>
+    </Name.Provider>
+    </>
+  )
 }
-
-export default App;
+export default App
+export {Name,Address}
